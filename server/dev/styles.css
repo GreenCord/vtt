@@ -1,0 +1,36 @@
+main.container {
+    color: #1789FC;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(7,min-content);
+    margin: 0 auto;
+    max-width: 640px;
+}
+main.container.quit {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-content: center;
+    place-items: center;
+    height: 100vh;
+}
+.status {
+    border-bottom: 1px dotted #1789FC;
+    font-size: 16px;
+    grid-row: 1;
+    padding: 8px;
+}
+.status.connection {
+    grid-column: 1 / 2;
+    text-align: center;
+}
+.status.message {
+    grid-column: 2 / 7;
+    text-align: right;
+}
+.connected {
+    color: #006C67;
+}
+
+.disconnected {
+    color: #db4437;
+}
