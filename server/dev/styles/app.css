@@ -1,0 +1,75 @@
+body {
+    background: var(--color-white);
+    color: var(--color-black);
+    display: relative;
+}
+
+.container {
+    display: grid;
+    margin: 0 auto;
+}
+.status.container {
+    border-bottom: 1px dotted #1789FC;
+    grid-template-columns: 1fr 11fr;
+    font-size: calc(16 * var(--px));
+    padding: calc(8 * var(--px));
+}
+.status .connection {
+    font-weight: var(--bold);
+    grid-column: 1 / 2;
+    text-align: center;
+}
+.status .message {
+    grid-column: 2 / 7;
+    text-align: right;
+}
+.connected {
+    color: var(--color-primary-light);
+}
+.disconnected {
+    color: var(--color-accent);
+}
+.container.primary {
+    grid-template-columns: 9fr 3fr;
+}
+
+header {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+header .content {
+    padding: calc(16 * var(--px));
+}
+
+main,
+nav {
+    padding: calc(16 * var(--px));
+}
+
+nav button {
+    background: var(--color-secondary-light);
+    border: 0;
+    border-radius: calc(16 * var(--px));
+    color: var(--color-black);
+    font-family: var(--font-stack-body);
+    font-size: calc(16 * var(--px));
+    font-weight: var(--bold);
+    padding: calc(16 * var(--px));
+    text-transform: uppercase;
+    width: 100%
+}
+
+nav button:hover {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+footer {
+    background: var(--color-secondary);
+    bottom: 0;
+    color: var(--color-white);
+    padding: calc(4 * var(--px));
+    position: absolute;
+    width: 100%;
+}
