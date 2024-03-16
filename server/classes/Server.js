@@ -19,7 +19,7 @@ module.exports = class Server {
         console.log(`Broadcasting ::`, json);
         const data = JSON.stringify(json);
         for(let id in this.clients) {
-            let client = clients[id];
+            let client = this.clients[id];
             if (client.readyState === WebSocket.OPEN) {
                 client.send(data);
             }
@@ -50,14 +50,29 @@ module.exports = class Server {
             id,
             type: this.eventTypes.USER_EVENT,
             message: JSON.stringify(data),
-        })
+        });
+        if (data && data.command) {
+            switch (data.command) {
+                case('getClients'): {
+                    const client = this.clients[id];
+                    if (client.readyState === WebSocket.OPEN) {
+                        client.send(JSON.stringify(this.clients))
+                    }
+                    break;
+                }
+                default:
+                    break;
+            }
+        }
     }
     open(id) {
         console.log('Opening...')
-        this.logEvent({ 
+        const event = { 
             id, 
             type: this.eventTypes.USER_EVENT, 
             message: this.eventTypes.CONNECTED 
-        });
+        }
+        this.logEvent(event);
+        this.broadcast(event)
     }
 }

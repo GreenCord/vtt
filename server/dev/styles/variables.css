@@ -1,0 +1,33 @@
+:root {
+    /* 1px = 0.0625rem; */
+    --px: 0.0625rem;
+    
+    /* Margin/Padding/Gutter Default */
+    --margin-default: calc(30 * var(--px, 1px));
+    
+    /* Font Stack */
+    --font-stack-body: "Lato", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-stack-display: "Lato",serif;
+    --font-stack-mono: 'Lucida Sans Typewriter', 'Lucida Console', Monaco, monospace, monospace;
+    
+    /* Weights */
+    --thin: 100;
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --semibold: 600;
+    --bold: 700;
+    --black: 900;
+    
+    /* Color Theme */
+    
+    --color-black: hsl(240,9%,13%,1);
+    --color-white: hsl(32,100%,97%,1);
+    --color-primary: hsl(227,63%,18%,1);
+    --color-primary-light: hsl(227,63%,86%,1);
+    --color-secondary: hsl(190,64%,34%,1);
+    --color-secondary-light: hsl(190,64%,86%,1);
+    --color-accent: hsl(299,21%,45%,1);
+    --color-accent-bold: hsl(290, 70%, 35%);
+
+}

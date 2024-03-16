@@ -4,23 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client for Dev Testing Server Stuff</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/typography.css">
+    <link rel="stylesheet" href="./styles/app.css">
 </head>
 <body>
     <header>
-        <div class="console">
-            <button id="HelloWorld">Hello World</button>
+        <div class="status container">
+            <div class="connection">
+                <span class="unknown" id="connectionStatus">&#x25cf; UNKNOWN</span>
+            </div>
+            <div class="message">
+                <span class="unknown" id="statusMessage"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h1>ChickenVTT &ndash; Developer Console</h1>
+
         </div>
     </header>
-    <main class="container">
-        <div class="status connection">
-            <span class="unknown" id="connectionStatus">&#x25cf; UNKNOWN</span>
-        </div>
-
-        <div class="status message">
-            <span class="unknown" id="statusMessage"></span>
-        </div>
-    </main>
+    <div class="primary container">
+        <main>
+            <div class="canvas">Test</div>
+        </main>
+        
+        <nav>
+            <div class="console">
+                <button id="HelloWorld">Hello World</button>
+            </div>
+        </nav>
+    </div>
+    
     <footer>
         &copy; 2024
     </footer>
