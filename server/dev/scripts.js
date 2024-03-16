@@ -3,8 +3,9 @@ const webSocket = new WebSocket("ws://localhost:8888");
 // Prototype app constants/states/methods. For dev testing only
 const app = {
     commands: {
+        GetClients: { "command": "getClients"},
         HelloWorld: { "command": "helloWorld" },
-        valid: ['HelloWorld'],
+        valid: ['GetClients', 'HelloWorld'],
     },
     content: {
         connection: {
@@ -71,15 +72,18 @@ webSocket.onopen = (event) => {
     status.classList.remove('unknown');
     status.classList.add('connected');
     status.innerHTML = app.content.connection.online;
-    toast.pop(app.DOM.status.message, "Connected!")
+    toast.write(app.DOM.status.message, "Connected!")
 
     if (app.status.firstLaunch) {
         console.log('First launch');
+        webSocket.send(JSON.stringify(app.commands.GetClients))
     }
 }
 
 webSocket.onmessage = (event) => {
     console.log(`webSocket.onmessage fired:`, event);
+    const data = JSON.parse(event.data);
+    console.log(`webSocket.onmessage data`, data);
 }
 
 webSocket.onclose = (event) => {
@@ -89,7 +93,7 @@ webSocket.onclose = (event) => {
     status.classList.remove('unknown');
     status.classList.remove('connected');
     status.innerHTML = app.content.connection.offline;
-    toast.pop(app.DOM.status.message, "Disconnected!")
+    toast.write(app.DOM.status.message, "Disconnected!")
 }
 
 webSocket.onerror = (event) => {
