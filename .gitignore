@@ -1,7 +1,5 @@
 # VS Code configs
-.vscode
-.vscode/
-.vscode/*
+.vscode/launch.json
 
 # Logs
 logs
