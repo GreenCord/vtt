@@ -1,7 +1,7 @@
-const Server = require(`./classes/Server`);
-const uuidv4 = require(`uuid`).v4;
+import { Server } from './classes/Server.js';
+import { v4 as uuidv4 } from 'uuid';
 
-require(`dotenv`).config();
+process.loadEnvFile();
 
 const server = new Server(process.env.SERVER_PORT);
 
