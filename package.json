@@ -2,7 +2,12 @@
     "name": "vtt",
     "description": "## Client",
     "version": "1.0.0",
-    "main": "0",
+    "main": "/server/server.js",
+    "type": "module",
+    "scripts": {
+        "createDocs": "jsdoc ./ -r -c ./.jsdoc.conf.json -d docs",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
     "dependencies": {
         "acorn": "^8.11.3",
         "acorn-jsx": "^5.3.2",
@@ -103,18 +108,17 @@
         "uc.micro": "^1.0.6",
         "underscore": "^1.13.6",
         "uri-js": "^4.4.1",
+        "uuid": "^9.0.1",
         "which": "^2.0.2",
         "wrappy": "^1.0.2",
+        "ws": "^8.16.0",
         "xmlcreate": "^2.0.4",
         "yocto-queue": "^0.1.0"
     },
     "devDependencies": {
+        "bufferutil": "^4.0.8",
         "eslint": "^8.57.0",
         "jsdoc": "^4.0.2"
-    },
-    "scripts": {
-        "createDocs": "jsdoc ./ -r -c ./.jsdoc.conf.json -d docs",
-        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
     "license": "ISC"
