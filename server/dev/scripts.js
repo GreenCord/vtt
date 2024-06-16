@@ -3,9 +3,10 @@ const webSocket = new WebSocket(`ws://localhost:8888`);
 // Prototype app constants/states/methods. For dev testing only
 const app = {
     commands: {
+        ChatSendMessage: { "command": `chatSendMessage` },
         GetClients: { "command": `getClients` },
         HelloWorld: { "command": `helloWorld` },
-        valid: [`GetClients`, `HelloWorld`],
+        valid: [`ChatSendMessage`, `GetClients`, `HelloWorld`],
     },
     content: {
         connection: {
@@ -59,8 +60,31 @@ window.addEventListener(`click`, function (e) {
 
     if (app.commands.valid.includes(id)) {
         e.preventDefault();
+        let command = app.commands[id];
+        let error = false;
+
         console.log(`Click! `, id);
-        webSocket.send(JSON.stringify(app.commands[id]));
+        try {
+            switch (id) {
+                case (`ChatSendMessage`): {
+                    command.message = document.getElementById('chatInputField').value
+                    command.user = document.getElementById('currentUser').value
+                    console.log("Command Updated: ", command)
+                    if (!command.user) {
+                        toast.pop(app.DOM.status.message, "Login required")
+                        error = true;
+                        throw Error("NotAuthenticated")
+                    }
+                    break;
+                }
+                default:
+                    console.log('Not implemented')
+            }
+        } catch (error) {
+            console.log("Error: ", error)
+        } finally {
+            if (!error) webSocket.send(JSON.stringify(command));
+        }
     }
 });
 

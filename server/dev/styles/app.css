@@ -28,8 +28,12 @@ header .content {
     text-align: center;
 }
 .status .message {
-    grid-column: 2 / 7;
-    text-align: right;
+    grid-column: 2 / 3;
+        text-align: left;
+    }
+    
+    .status .user {
+        grid-column: 3 / 7;
 }
 .connected {
     color: var(--color-primary-light);
@@ -72,6 +76,21 @@ nav button:hover {
     cursor: pointer;
 }
 
+#activePanel {
+    padding: calc(16 * var(--px));
+    height: 100%;
+}
+
+#chat {
+    background-color: var(--color-white);
+    display: grid;
+    grid-template-rows: 1fr 32px;
+}
+
+#chatInput textarea {
+    display: inline-block;
+    width: 100%;
+}
 footer {
     background: var(--color-secondary);
     bottom: 0;

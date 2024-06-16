@@ -82,13 +82,17 @@ export class Server {
         });
         if (data && data.command) {
             switch (data.command) {
-                case `getClients`: {
+                case (`getClients`): {
                     const client = this.clients[id];
 
                     if (client.readyState === WebSocket.OPEN) {
                         client.send(JSON.stringify(this.clients));
                     }
                     break;
+                }
+                case (`chatSendMessage`): {
+                    const { msg, user } = data;
+
                 }
                 default:
                     break;

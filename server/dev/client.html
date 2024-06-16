@@ -21,6 +21,14 @@
             <div class="message">
                 <span class="unknown" id="statusMessage"></span>
             </div>
+            <div class="user">
+                <span class="unknown" id="user">
+                    <select name="currentUser" id="currentUser">
+                        <option value="">Login</option>
+                        <option value="Lazar">Lazar</option>
+                    </select>
+                </span>
+            </div>
         </div>
         <div class="content">
             <h1>ChickenVTT &ndash; Developer Console</h1>
@@ -32,12 +40,27 @@
             <main>
                 <div class="canvas">Test</div>
             </main>
-            
+        </div>
+        <div id="panel">
             <nav>
                 <div class="console">
                     <button id="HelloWorld">Hello World</button>
                 </div>
             </nav>
+            <div id="activePanel">
+                <div id="chat">
+                    <div id="chatHistory">
+                        <div class="message">
+                            <p class="author">Gnome:</p>
+                            <p>Would you like a bread bowl?</p>
+                        </div>
+                    </div>
+                    <div id="chatInput">
+                        <input id="chatInputField" type="text"></textarea>
+                        <button id="ChatSendMessage">Send</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     
