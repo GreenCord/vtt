@@ -28,8 +28,12 @@ header .content {
     text-align: center;
 }
 .status .message {
-    grid-column: 2 / 7;
-    text-align: right;
+    grid-column: 2 / 3;
+        text-align: left;
+    }
+    
+    .status .user {
+        grid-column: 3 / 7;
 }
 .connected {
     color: var(--color-primary-light);
