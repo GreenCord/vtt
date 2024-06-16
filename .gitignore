@@ -1,6 +1,9 @@
 # VS Code configs
 .vscode/launch.json
 
+# Mac Crap
+.DS_Store
+
 # Logs
 logs
 *.log
