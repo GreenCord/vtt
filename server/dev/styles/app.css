@@ -72,6 +72,21 @@ nav button:hover {
     cursor: pointer;
 }
 
+#activePanel {
+    padding: calc(16 * var(--px));
+    height: 100%;
+}
+
+#chat {
+    background-color: var(--color-white);
+    display: grid;
+    grid-template-rows: 1fr 32px;
+}
+
+#chatInput textarea {
+    display: inline-block;
+    width: 100%;
+}
 footer {
     background: var(--color-secondary);
     bottom: 0;
